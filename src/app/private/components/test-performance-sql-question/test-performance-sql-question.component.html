@@ -1,0 +1,11 @@
+<div *ngIf="question != null" class="questionBlock">
+    <div class="question">
+        <p id="question"><b>Q{{questionNo}}</b> &nbsp; {{question.questionTitle}}</p>
+    </div>
+
+    <div class="query" [ngClass]="{correct:sqlQuestion.sqlResult,wrong:!sqlQuestion.sqlResult}">
+        <p [innerHTML]="sqlQuestion.sqlQuery"></p>
+    </div>
+    <br>
+    <hr>
+</div>

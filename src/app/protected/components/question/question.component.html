@@ -1,0 +1,17 @@
+<div class="box">
+    <div class="questionAndOption child">
+        <div class="question">
+            <div class="questionBlock">
+                <p id="number">Q {{questionNumber}}.</p>
+                <div id="content">
+                    {{question.question}}
+                </div>
+                <p id="type">( {{question.questionType}} )</p>
+            </div>
+        </div>
+        <app-options [questionId]="question.questionId" [questionType]="question.questionType" [options]="question.options"></app-options> 
+    </div> 
+    <div class="questionImageBlock child">
+        <img *ngIf=" question.questionImage != '' " src="{{question.questionImage}}" class="questionImage" alt="">
+    </div>  
+</div>

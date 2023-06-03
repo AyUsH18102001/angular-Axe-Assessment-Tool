@@ -1,0 +1,22 @@
+<div class="body">
+    <div class="table-title">
+        <h3>Axe Assessment Tool Simulation Database</h3>
+        <p>Below are the tables schema, make sure to use them in the problem statement</p>
+    </div>
+    
+    <div class="tableNames">
+        <div class="tableSpace" *ngFor="let table of tableSchemas">
+            <h4>{{table.tableName}}</h4>
+            <table id="table">
+                <tr>
+                    <th>Columns</th>
+                    <th>Data Type</th>
+                </tr>
+                <tr *ngFor="let row of table.columns; let i=index">
+                    <td>{{table.columns[i]}}</td>
+                    <td>{{table.dataType[i]}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

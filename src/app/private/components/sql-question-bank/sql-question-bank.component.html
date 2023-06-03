@@ -1,0 +1,58 @@
+<div class="questionForm">
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" (click)="removeModal()">&times;</span>
+            <h3 style="color: black;">Are you sure you want to delete question</h3>
+            <br>
+            <button class="red" (click)="deleteQuestion()" style="display:inline-block;">Yes</button>
+            <button class="green" (click)="removeModal()" style="display:inline-block;">Cancel</button>
+        </div>
+    </div>
+
+    <div class="heading">
+        <div class="title">
+            <p>SQL Question Bank</p>
+        </div>
+
+        <div class="addQuestion">
+            <p (click)="addQuestion()">
+                <fa-icon [icon]="addIcon"></fa-icon> Add
+            </p>
+        </div>
+    </div>
+
+    <p>Below are the list of sql question present in the database</p>
+    <div class="search">
+        <div class="searchIcon">
+            <fa-icon style="display: inline-block;" [icon]="searchIcon"></fa-icon>
+        </div>
+        <div class="searchQuestion">
+            <div class="form-control">
+                <input id="searchField" type="text" (input)="onSearchChange()" name="searchQuestion"
+                    [(ngModel)]='searchQuestion' placeholder="Search Question">
+            </div>
+        </div>
+
+        <div class="filterIcon">
+            <fa-icon style="display: inline-block;" [icon]="filter"></fa-icon>
+        </div>
+    </div>
+
+    <div class="questionBank">
+        <div *ngFor="let question of questions">
+            <app-sql-bank-question [question]="question" (deleteQuestionHndler)="showModal()">
+            </app-sql-bank-question>
+        </div>
+        <div *ngIf="noSuchQuestionFound" class="searchMessage">
+            <p id="searchMessage">No such Question found :(</p>
+        </div>
+    </div>
+    <div *ngIf="!noSuchQuestionFound" class="pageBar">
+        <app-page-bar *ngIf="pageCount>0" pageKey="sqlPage" [pageCount]="pageCount"
+            (pageChange)="getSqlBatchQuestion()"></app-page-bar>
+    </div>
+    
+</div>
+
+<div id="snackbar">{{snackBarContent}}</div>

@@ -1,0 +1,11 @@
+<nav class="navbar">
+    <app-logo-title [testName]="navbar"></app-logo-title>
+    <p class="version"> v1.0.0</p>
+    <div class="right adminInfo" *ngIf="isAdminDomain()">
+        <p id="adminPanel">Admin Dashboard</p>
+        <p id="adminPanel">|</p>
+        <p id="adminPanel">Frank Reynolds</p>
+        <p id="adminPanel">|</p>
+        <p id="adminPanel"><button class="Btn end" (click)='logOut()'>Log Out</button></p>
+    </div>
+</nav>

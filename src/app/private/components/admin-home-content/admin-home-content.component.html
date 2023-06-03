@@ -1,0 +1,19 @@
+<div class="heading">
+    <div class="title">
+        <p>Create Test</p>
+    </div>
+</div>
+<div class="createTest row">
+    <div class="types">
+        <app-test-type-accordian (sendToPaper)="getTestData()" (togglePanel)="togglePanel()"></app-test-type-accordian>
+    </div>
+
+    <div class="paper">
+        <app-test-paper [questions]="questions" (createTestSnackbar)="snackbarEvent($event)"></app-test-paper>
+    </div>
+
+    <div class="editRules" *ngIf="editRules" (click)="goEditRules()">
+        <p>> Edit Rules</p>
+    </div>
+</div>
+<div id="snackbar">{{snackBarContent}}</div>

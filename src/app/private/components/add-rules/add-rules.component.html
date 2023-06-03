@@ -1,0 +1,25 @@
+<div class="rules">
+    <div class="defaultRules">
+        <h2>Default Rules</h2>
+        <p>The test will be for 45 minutes</p>
+        <p>The test will submit automatically after time is up</p>
+        <p>The answer is saved only after saving and moving to next question</p>
+    </div>
+    <br>
+    <h2>Rules</h2>
+    <div class="rulesList" id="rulesList">
+        <div class="toggle" *ngFor="let rule of rules; let i=index">
+            <p>{{rule.rule}}</p>
+            <div class="selection">
+                <label class="switch">
+                    <input type="checkbox"class='rules_toggle'  id="rules[i].short_name" [(ngModel)]="rules[i].state">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="save" (click)="save()">
+        <p>Save And Continue</p>
+    </div>
+</div>

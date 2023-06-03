@@ -1,0 +1,83 @@
+<div class="editQuestionForm">
+    <div class="heading">
+        <div class="title">
+            <p>Edit Question</p>
+        </div>
+    </div>
+
+    <p>Please fill all the question fields</p>
+
+    <div class="editForm">
+        <form #editForm="ngForm" (ngSubmit)="editQuestionData()"> 
+            <div class="form-control">
+                <label for="questionContent">Question Content</label>
+                <input type="text" name="questionContent" id="questionContent" [(ngModel)]="editQuestion.questionContent"
+                    placeholder="Question Content (Ex. What is a Transaction)">
+            </div>
+
+            <div class="form-control" *ngIf="editQuestion.questionImage != null">
+                <div class="questionImage">
+                    <label for="questionImage" class="questionImageLabel">Question Image</label>
+                    <p class="questionImageP">This is not a required field</p>
+                </div>
+                <div class="imageButtonAndPath">
+                    <button type="button" class="fileButton" (click)="clickInputFile()">Add QuestionImage</button>
+                    <input (change)="getImageFile($event)" type="file" name="questionImage" id="questionImage" style="display:none">
+                    <p class="imagePath">{{imageFilePath}}</p>
+                    <div *ngIf="showImage" class="img" style="display: flex; justify-content: stretch;">
+                        <a id="showImage" [href]="imageURL | safe" rel="noopener" target="_blank">Show Image</a>
+                        <fa-icon [icon]="close" style="padding-top: 8px; cursor: pointer;" (click)="removeImage()"></fa-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-control col">
+                    <label for="questionType">Question Type</label>
+                    <div class="select">
+                        <select id="questionTypeId" name="questionTypeId" [(ngModel)]="editQuestion.questionTypeId"
+                            (click)="questionTypeSelected()">
+                            <option *ngFor="let type of questionTypes; let i = index" value="{{type.questionTypeId}}">{{type.type}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-control col">
+                    <label for="questionType">Test Type</label>
+                    <div class="select">
+                        <select id="testTypeId" name="testTypeId" [(ngModel)]="editQuestion.testTypeId">
+                            <option *ngFor="let test of testTypes;" value="{{test.testTypeId}}">{{test.test}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="form-control">
+                <label for="options">Options</label>
+                <p>Please check the radiobutton to slect an option as the asnwer</p>
+                <div *ngIf="showOptionInput">
+                    <div *ngFor="let option of options; let i=index" class="input">
+                        <div class="selectOption selectBlob" id="select-{{i}}"
+                            (click)="selectOptionAsAnswer(i)"></div>
+                        <input type="text" name="options-{{i}}"
+                            id="option-{{i}}" [(ngModel)]="editQuestionOptions[i]" placeholder="Opton No. {{i+1}}"
+                            class="selectOption inputOption">
+                    </div>
+                </div>
+                <div *ngIf="!showOptionInput" class="trueFalse">
+                    <div id="true" class=" tf-option" (click)="addTrueOrFalse(true)">
+                        <p class="tf">True</p>
+                    </div>
+                    <div id="false" class="tf-option" (click)="addTrueOrFalse(false)">
+                        <p class="tf">False</p>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" name="submit" id="submit" class="btn btn-block">Edit Question</button>
+        </form>
+    </div>
+</div>
+<div id="snackbar">{{snackBarContent}}</div>

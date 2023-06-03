@@ -1,0 +1,299 @@
+.btn-submit {
+    margin-left: 4%;
+    border: none;
+    padding: 15px 35px;
+    background-color: #26b862;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 38%;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.main{
+    position: fixed;
+    overflow: auto;
+}
+
+
+.questions h3{
+    padding-left: 2vw;
+    color: red;
+}
+
+
+.row{
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3vh;
+}
+
+.col{
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    margin-right: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1.2ms all;
+}
+
+
+.test{
+    padding-top: 5.5%;
+}
+
+.active {
+    background-color: #4fd487;
+    color: #fff;
+    display: block;
+    width: 48%;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-size: large;
+    cursor: pointer;
+  }
+
+.navigation{
+    width: 100%;
+    height: 7vh;
+    position: fixed;
+    display: flex;
+    justify-content: stretch;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    z-index: 21;
+    background-color: white;
+}
+
+.leftDiv{
+    width: 3%;
+    justify-content: start;
+    cursor: pointer;
+    color: #29B162;
+    opacity: 0.7;
+    /* background-color: royalblue; */
+}
+.questionsStatus{
+    display: flex;
+    justify-content: stretch;
+    width: 94%;
+    justify-content: center;
+}
+.questionBlob{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(156, 156, 156);
+    font-size: 20px;
+    text-align: center;
+    margin-left: 12px;
+    padding-top: 10px;
+    margin-right: 12px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.section{
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+}
+
+.aptitudeSection{
+    background-color: saddlebrown;
+    justify-content: center;
+    width: 100%;
+}
+
+.sqlSection{
+    background-color: royalblue;
+    justify-content: center;
+    width: 100%;
+}
+
+.modal{
+    z-index: 12;
+}
+
+.questionAttempted{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 12px;
+    padding-top: 10px;
+    margin-right: 12px;
+    color: whitesmoke;
+    background-color: rgb(48, 180, 48);
+    cursor: pointer;
+}
+
+.questionSeek{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 12px;
+    padding-top: 10px;
+    margin-right: 12px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+.questionSkipped{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 12px;
+    padding-top: 10px;
+    margin-right: 12px;
+    color: whitesmoke;
+    background-color: rgb(243, 46, 46);
+    cursor: pointer;
+}
+
+.rightDiv{
+    /* background-color: red; */
+    width: 3%;
+    padding-left: 0.68%;
+    justify-content: flex-end;
+    cursor: pointer;
+    color: #29B162;
+    opacity: 0.7;
+}
+
+.disableNavigation{
+    color: black;
+}
+
+
+/* SQL Frame CSS */
+
+.app-ace-editor {
+    width: 58vw;
+    height: 48vh;
+    border: 2px solid #f8f9fa;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+
+.sqlQuestion{
+    margin-top: 9vh;
+    display: flex;
+    justify-content: stretch;
+}
+
+.leftSide{
+    padding-left: 12px;
+    padding-top: 20px;
+    padding-right: 12px;
+    padding-bottom: 20px;
+    height: 100vh;
+    width: 45vw;
+    background-color: whitesmoke;
+    overflow: scroll;
+}
+
+.problemStatement{
+    width: auto;
+    height: 100vh;
+}
+
+.editor_console{
+    width:55vw;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.console{
+    background-color: white;
+    min-width: 50vw;
+    min-height: 50vh;
+    max-height: 50vh;
+}
+
+.run_submitButtons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+button{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#run{
+    background-color: rgb(241, 241, 241);
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    opacity: 0.7;
+    border: 2px solid;
+    color: #1BA94C;
+    border-color: #1BA94C;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 4px;
+}
+
+#submit{
+    background-color: #1BA94C;
+    font-size: 14px;
+    color: whitesmoke;
+    font-weight: bold;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 4px;
+    border: none;
+}
+
+.compilerMsg, .output{
+    padding-top: 22px;
+}
+
+.outputSet{
+    padding-left: 25px;
+    height: 50vh;
+    overflow: scroll;
+    padding-bottom: 20px;
+}
+
+.messageContainer{
+    background-color: #F3F7F7;
+    width: 50vw;
+    height: 5vh;
+    border-radius: 5px;
+}
+
+
+.outputContainer{
+    background-color: #F3F7F7;
+    border-radius: 5px;
+    width: 50vw;
+    height: 30vh;
+    padding: 12px;
+}
+
+button{
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}

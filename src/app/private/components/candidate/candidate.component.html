@@ -1,0 +1,42 @@
+<div class="candidate" [ngClass]="{selected : candidateCardBackground==1,rejected : candidateCardBackground==-1}">
+    <div class="upperLeft">
+        <div class="profile">
+            <span class="circle">
+                <img [src]="defaultUserProfile">
+            </span>
+        </div>
+        
+        <div class="details">
+            <div class="details1">
+                <p id="name">{{candidate.firstName}} {{candidate.lastName}}</p>
+            </div>
+        
+            <div class="details2">
+                <p id="email"><fa-icon [icon]="email" id="email"></fa-icon> &nbsp; {{candidate.email}}</p>
+            </div>
+        
+            <div class="details3">
+                <p id="phone"> <fa-icon [icon]="phone" id="phone"></fa-icon> &nbsp; {{candidate.phone}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="school">
+        <p id="college"> <fa-icon [icon]="school" id="college"></fa-icon> &nbsp; {{candidate.college}}</p>
+    </div>
+
+    <div class="resume">
+        <a id="resume" [href]="resumeURL" rel="noopener" target="_blank"> <fa-icon [icon]="resume" id="college"></fa-icon> &nbsp;&nbsp; View Resume</a>
+    </div>
+
+    <div class="tokenMail">
+        <p (click)="sendEmailHandler(candidate.userId)" ><fa-icon [icon]="email" id="college"></fa-icon> Invite Test Code</p>
+    </div>
+
+    
+
+    <div class="userTest">
+        <p (click)="goTestPerformance(candidate.userId)" >Test Performance<fa-icon [icon]="right" id="college"></fa-icon></p>
+    </div>
+
+</div>

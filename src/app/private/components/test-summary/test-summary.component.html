@@ -1,0 +1,14 @@
+<div class="testSummary" >
+    <p style="font-weight: bold;">Aptitude Section : </p>
+    <app-test-performance-question *ngFor="let club of clubQuestions; let i=index" [questionNo]="i+1"
+        [questionAnswer]="club"></app-test-performance-question>
+    
+    <br>
+    <br>
+    <p style="font-weight: bold;">SQL Section : </p>
+    <app-test-performance-sql-question 
+    *ngFor="let sql_Q of sqlQuestions; let j = index"
+     [sqlQuestion]="sql_Q"
+     [questionNo]="j+1">
+    </app-test-performance-sql-question>
+</div>

@@ -1,0 +1,51 @@
+.version{
+    color: #ffffff;
+    padding-top: 42px;
+    float: left;
+}
+
+.navbar{
+    background-color: #022F3B;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.right{
+    float: right;
+    padding-top: 44px;
+}
+
+#adminPanel{
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+    padding-right: 26px;
+}
+
+.adminInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Btn {
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: inherit;
+    transition: 0.4s all;
+  }
+
+.Btn :hover{
+    transform: scale(1.02);
+}
+
+.end{
+    background: rgb(246, 69, 69);
+}

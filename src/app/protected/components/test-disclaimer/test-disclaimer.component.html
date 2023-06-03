@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="disclaimer">
+    <div class="threeimgtxtcnt">
+        <img src="../../../assets/images/dis.png" width="160" height="140">
+    </div>
+
+    <div>
+        <h1>Test Rules</h1>
+    </div>
+
+    <app-test-rules-list [rules]="rules"></app-test-rules-list>
+    <br>
+    <br>
+    <div class="terms" style="margin: 0.4rem 5rem;">
+        <input type="radio" id="termsAndCond" name="termsAndCond" [(ngModel)]="termsAndCond" value="true">
+          <label for="termsAndCond">
+            I have read all the above rules, and accept the outcome of it
+        </label>
+    </div>
+
+    <button class="btn" [ngStyle]="{'opacity':termsAndCond ? 1 : 0.4}" (click)='giveTest()'>Start Test</button>
+</div>

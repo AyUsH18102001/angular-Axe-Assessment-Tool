@@ -1,0 +1,13 @@
+<div class="box">
+    <div class="left">
+        <app-admin-nav-links></app-admin-nav-links>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="center">
+        <app-admin-home-content *ngIf='showHomeContent()' [firstName]="firstName" [lastName]="lastName"></app-admin-home-content>
+        <router-outlet *ngIf='not_showHomeContent()' ></router-outlet>
+    </div>
+
+</div>

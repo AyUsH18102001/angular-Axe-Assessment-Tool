@@ -1,0 +1,9 @@
+h3{
+    color: black;
+    margin: 0.4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: medium;
+}

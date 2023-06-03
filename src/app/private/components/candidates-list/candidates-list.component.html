@@ -1,0 +1,41 @@
+<div class="candidateList">
+    <div class="heading">
+        <div class="title">
+            <p>Candidates List</p>
+        </div>
+
+        <div class="addCandidate">
+            <p (click)="addCandidate()">
+                <fa-icon [icon]="addIcon"></fa-icon> Add
+            </p>
+        </div>
+    </div>
+
+    <p>Candidate enrolled for the test</p>
+    <div class="search">
+        <div class="searchIcon">
+            <fa-icon style="display: inline-block;" [icon]="searchIcon"></fa-icon>
+        </div>
+        <div class="searchCandidate">
+            <div class="form-control" >
+                <input id="searchField" type="text" (input)="onSearchChange()" name="searchCandidate"
+                [(ngModel)]='searchCandidate' placeholder="Search Candidate">
+            </div>
+        </div>
+    </div>
+
+    <div class="list">
+        <div *ngFor="let candidate of candidates">
+            <app-candidate [candidate]="candidate" (sendEmail)="sendEmail($event)"></app-candidate>
+        </div>
+        <div *ngIf="noSuchCandidateFound" class="searchMessage">
+            <p id="searchMessage">No such Candidate found :(</p>
+        </div>
+    </div>
+
+    <div class="pageBar">
+        <app-page-bar *ngIf="userPageCount>0" pageKey="cPage" [pageCount]="userPageCount" (pageChange)="getBatchOfCandidate()"></app-page-bar>
+    </div>
+</div>
+
+<div id="snackbar">{{snackBarContent}}</div>

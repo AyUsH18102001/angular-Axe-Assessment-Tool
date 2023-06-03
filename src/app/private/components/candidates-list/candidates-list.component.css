@@ -1,0 +1,68 @@
+.list{
+    float: left;
+    height: 58vh;
+    width: 55vw;
+    overflow: scroll;
+}
+.title{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.pageBar{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    /* background-color: red; */
+}
+
+.searchMessage{
+    padding-top: 5vh;
+    position: relative;
+    margin-left: 20px;
+    color: rgb(88, 88, 88);
+    letter-spacing: 2px;
+}
+
+#searchMessage{
+    font-size: 22px;
+}
+
+.addCandidate{
+    display: inline-block;
+    background-color: rgb(123, 226, 123);
+    font-size: 18px;
+    margin-left: 50%;
+    font-weight: bolder;
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.addQuestion:hover{
+    cursor: pointer;
+    background-color: rgb(68, 235, 68);
+}
+.hide{
+    display: none;
+}
+.searchIcon{
+    display: inline-block;
+}
+
+.searchCandidate{
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 25vw;
+}
+
+#searchField{
+    font-size: 18px;
+    outline: 0;
+    width: 100%;
+    border-width: 0 0 1px;
+    border-color: grey
+}

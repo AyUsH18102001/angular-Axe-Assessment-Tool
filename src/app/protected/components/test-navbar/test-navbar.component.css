@@ -1,0 +1,63 @@
+.Btn {
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: inherit;
+    margin-right: 44px;
+    transition: 0.4s all;
+  }
+
+.Btn :hover{
+    transform: scale(1.02);
+}
+
+.end{
+    background: rgb(246, 69, 69);
+}
+.submit{
+    background-color: green;
+}
+
+#email :hover{
+    font-weight: bold;
+}
+
+#timer {
+    color: white;
+    font-size: 38px;
+    font-weight: bolder;
+    float: none;
+    position: absolute;
+    top: 28%;
+    left: 48%;
+    letter-spacing: 2px;
+}
+
+#email{
+    color: white;
+    font-size: 15px;
+    font-weight: normal;
+    padding-right: 26px;
+    padding-top: 14px;
+}
+
+.right{
+    float: right;
+    top: 30%;
+    padding-top: 30px;
+}
+
+.navbar{
+    background-color: #022F3B;
+    /* position: relative; */
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}

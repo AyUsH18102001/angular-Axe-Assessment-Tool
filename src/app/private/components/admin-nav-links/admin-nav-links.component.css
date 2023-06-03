@@ -1,0 +1,26 @@
+p{
+    color: #12343d;
+    font-weight: bold;
+    font-size: 20px;
+}
+p:hover{
+    cursor: pointer;
+}
+
+.link{
+    margin: auto;
+    width: 300px;
+    padding: 20px;
+}
+
+.auto{
+    margin: auto;
+}
+
+.active{
+    border-left: 2px solid rgb(0, 28, 153);
+    background-color: #f6f6f6;
+    color: royalblue;
+    margin-right: 3px;
+    opacity: 0.5;
+}

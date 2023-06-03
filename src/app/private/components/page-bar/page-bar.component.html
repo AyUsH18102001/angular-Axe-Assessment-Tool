@@ -1,0 +1,9 @@
+<div class="pagination">
+    <a (click)="loadPreviousBatch()">&laquo;</a>
+
+    <div class="pageLinks">
+        <a *ngFor="let page of pages; let i = index;" (click)="onPageChange(i+1)" class="page" id="page-{{i+1}}">{{i+1}}</a>
+    </div>
+
+    <a (click)="loadNextBatch()">&raquo;</a>
+</div>

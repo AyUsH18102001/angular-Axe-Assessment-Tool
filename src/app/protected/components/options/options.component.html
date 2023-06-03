@@ -1,0 +1,13 @@
+<div>
+    <ul class="option_group">
+        <app-option
+            *ngFor="let option of options; let i=index"
+            [questionId] = "questionId"
+            [option]="option"
+            [optionId]="i"
+            [optionNumber]="optionNumber[i]"
+            [questionType]="questionType"
+            (click)="log()"
+        ></app-option>
+    </ul> 
+</div>

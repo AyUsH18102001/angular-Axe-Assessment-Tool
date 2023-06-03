@@ -1,0 +1,127 @@
+.addQuestion{
+    width: 55vw;
+    padding-left: 52.5%;
+    padding-top: 1.4vh;
+} 
+
+.row{
+    display: flex;
+    justify-content: stretch;
+    width: 55vw;
+}
+
+.heading{
+    width: 70%;
+}
+
+.showDbInfo{
+    justify-content: end;
+    width: 30%;
+    padding-top: 14px;
+    text-align: end;
+    color: royalblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.title{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-bottom: 12px;
+}
+
+.textArea{
+    float: left;
+    padding-top: 2vh;
+    width: 55vw;
+}
+
+#query{
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    background-color: #f6f6f6e5;
+    border-radius: 6px;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+}
+
+#questionTitle{
+    padding-bottom: 12px;
+    outline: none;
+    border: none;
+    border-bottom: 1.5px solid rgb(78, 78, 78);
+    font-size: 16px;
+    width: 55%;
+}
+
+/* modal styles */
+.modal-content-tables {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 55vw;
+    height: 70vh;
+    border-radius: 10px;
+    overflow: scroll;
+  }
+  
+  .close-tables {
+    color: #aaa;
+    float: right;
+    margin-bottom: auto;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-tables:hover,
+  .close-tables:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-tables {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 8%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+  
+  .green{
+    background-color: green;
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    width: 100px;
+    opacity: 0.8;
+    color: white;
+    cursor: pointer;
+  }
+
+  
+.red{
+    background-color: red;
+    opacity: 0.8;
+    color: white;
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    margin: 10px;
+    width: 100px;
+    cursor: pointer;
+  }

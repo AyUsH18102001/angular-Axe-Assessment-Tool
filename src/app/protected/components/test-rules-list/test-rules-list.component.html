@@ -1,0 +1,11 @@
+<div>
+    <div class="defaultRules">
+        <h3>• The test will be for 45 minutes</h3>
+        <h3>• The test will submit automatically after time is up</h3>
+        <h3>• The answer is saved only after saving and moving to next question</h3>
+    </div>
+
+    <div class="rules">
+        <h3 *ngFor="let rule of rules">• {{rule.display}}</h3>
+    </div>
+</div>

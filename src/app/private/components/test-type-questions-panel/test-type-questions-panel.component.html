@@ -1,0 +1,20 @@
+<div class="questions" *ngIf="questions != []">
+    <div class="question" id="question-{{testypeId}}-{{question.questionId}}" 
+        *ngFor="let question of questions; let i=index" 
+        (click)="addToTestHandler(question.questionId,question.questionContent,question.questionTypeId,question.short_name)">
+
+        <div class="content">
+            <b><p>{{question.questionContent}}</p></b>
+            <p>({{question.questionTypeId}})</p>
+        </div>
+        <fa-icon [icon]="add"></fa-icon>
+    </div>
+</div>
+
+<div class="questions" *ngIf="questions.length == 0">
+    <div class="question">
+        <div class="content">
+            <b style="color: red; opacity: 0.6;"><p>No questions yet</p></b>
+        </div>
+    </div>
+</div>

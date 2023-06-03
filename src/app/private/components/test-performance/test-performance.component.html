@@ -1,0 +1,79 @@
+<div *ngIf="userData != null" class="performance">
+    <div class="heading">
+        <div class="title">
+            <p>Performance</p>
+        </div>
+        <div class="toggle" *ngIf="userData.userTest.endTest">
+            <p id="selectCandidate"><b>Select Candidate</b></p>
+            <div class="selection">
+                <label class="switch">
+                    <input type="checkbox" id="selectStatus" [(ngModel)]="selectionStatus" (click)="toggleStatus()"> 
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <p *ngIf="userData.userTest.endTest">Below is the test summary of candidate</p>
+
+    <div class="userInfo" *ngIf="userData.userTest.endTest">
+        <div class="details">
+            <h3>Candidate Details : </h3>
+            <div class="name">
+                <p id="name"> <b>Name :</b> {{userData.firstName}} {{userData.lastName}}</p>
+            </div>
+
+            <div class="test">
+                <p id="test"> <b>Test : <b style="color: blue;">{{testName}}</b></b></p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="testDetails">
+            <h3>Test Details : </h3>
+            <div class="attempted">
+                <p id="attempted"> <b>Attempted :</b> {{userData.userTest.attempted}} </p>
+            </div>
+
+            <div class="score">
+                <p id="score"> <b>Score :</b> {{userData.userTest.score}} </p>
+            </div>
+
+            <div class="violation">
+                <b style="padding-right: 5px;">Violation :</b><p id="violation" [ngClass]="{violationRed:userData.violation>3}"> {{userData.violation}}</p>
+            </div>
+        </div>
+    </div>
+
+    <p *ngIf="!userData.userTest.endTest">The candidate has not attempted any test</p>
+    <br><br>
+    <div *ngIf="!userData.userTest.endTest" class="assignTest">
+        <div *ngIf="testName != null " >
+            <p>Last Assigned Test : <b style="color: blue;">{{testName}}</b></p>
+            <br>
+            <br>
+        </div>
+        <div class="selectTest">
+            <p><b>Assign Test to Condidate</b></p>
+            <div class="select">
+                <select id="testTypeId" name="testTypeId" [(ngModel)]="testId">
+                    <option *ngFor="let test of tests" name="testId" value="{{test.testId}}">{{test.testName}}</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="assign" (click)="assignTest()">
+             Assign >
+        </div>
+    </div>
+
+    <br>
+    <div *ngIf="clubQuestions != [] && userData.userTest.endTest" class="summary">
+        <p id="testSummary">Test Summary</p>
+        <p id="candidateReport" (click)="generateCandidateReport()">Candidate Report <fa-icon [icon]='pdf'></fa-icon></p>
+        <div class="testSummary">
+            <app-test-summary [questionsAttempted]="questionsAttempted" [sqlQuestions]="sqlQuestions"></app-test-summary>
+        </div>
+    </div>
+</div>
+<div id="snackbar">{{snackBarContent}}</div>

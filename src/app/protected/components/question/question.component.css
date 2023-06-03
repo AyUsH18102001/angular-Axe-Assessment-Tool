@@ -1,0 +1,62 @@
+.question{
+    padding-left: 3%;
+    padding-top: 4%;
+}
+
+
+.questionAndOption{
+    display: inline-block;
+    width: 50%;
+}
+
+.box{
+    display: flex;
+    align-items:strech;
+}
+
+.child{
+    min-height: 100%;
+    margin: 0 .5em;
+    padding: .5em;
+}
+
+.questionImageBlock{
+    display: inline-block;
+    padding-top: 1%;
+}
+
+#questionImageBlock :hover{
+    transform: scale(2);
+}
+
+.questionBlock{
+    display: flex;
+    align-items: flex-start;
+}
+
+.questionImage{
+    width: 45vw;
+    height: 65vh;
+}
+
+#number{
+    display: inline-block;
+    padding-right: 12px;
+    font-size: 24px;
+    font-weight: bolder;
+    min-height: 100%;
+}
+
+#content{
+    display: inline-block;
+    max-width: 70%;
+    font-size: 24px;
+    font-weight: bold;
+    min-height: 100%;
+}
+
+#type{
+    padding: 8px;
+    font-size: 16px;
+}
+

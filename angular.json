@@ -20,14 +20,20 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
+            "assets": [ 
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/ace-builds/src/ace.js",
+              "./node_modules/ace-builds/src/theme-eclipse.js",
+              "./node_modules/ace-builds/src/theme-monokai.js",
+              "./node_modules/ace-builds/src/mode-html.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -84,12 +90,25 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" },
+              "src/assets",
+              "src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/ace-builds/src/",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/ace-builds/src/ace.js",
+              "./node_modules/ace-builds/src/theme-eclipse.js",
+              "./node_modules/ace-builds/src/theme-monokai.js",
+              "./node_modules/ace-builds/src/mode-html.js"
+            ]
           }
         }
       }

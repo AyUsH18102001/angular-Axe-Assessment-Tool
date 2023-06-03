@@ -1,0 +1,11 @@
+<div *ngIf="question != null" class="questionBlock">
+    <div class="question">
+        <p id="question"><b>Q{{questionNo}}</b> &nbsp; {{question.questionContent}}</p>
+    </div>
+
+    <div class="options">
+        <p class="option-{{question.questionId}} option" *ngFor="let option of question.options; let i=index"><b>{{optionNumber[i]}}</b>&nbsp;&nbsp;{{option.answer}}</p>
+    </div>
+    <br>
+    <hr>
+</div>

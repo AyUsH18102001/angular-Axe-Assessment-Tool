@@ -1,0 +1,7 @@
+<div class="links">
+    <div class="auto">
+        <div class="link" [ngClass]="{active:i==0}" id="link-{{i}}" *ngFor="let link of navigatingLinks; let i=index">
+            <p (click)='navigateLink(i)'> <fa-icon [icon]="navLinksLogo[i]" ></fa-icon> &nbsp;&nbsp;&nbsp; {{link}}</p>
+        </div>
+    </div>
+</div>

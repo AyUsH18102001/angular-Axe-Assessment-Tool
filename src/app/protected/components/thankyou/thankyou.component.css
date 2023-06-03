@@ -1,0 +1,15 @@
+.thankyou{
+    padding-top: 45vh;
+}
+
+img{
+    display: block; margin-left: auto; margin-right: auto;
+}
+
+h1{
+    text-align: center; padding-top: 50px; color: #29B162;
+}
+
+h5{
+    text-align: center; padding-top: 5px; color: #29B162;
+}

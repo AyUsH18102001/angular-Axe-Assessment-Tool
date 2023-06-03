@@ -1,0 +1,97 @@
+.candidate{
+    float: left;
+    position: relative;
+    width: 46%;
+    height: 300px;
+    background-color: #F6F6F6;
+    border-radius: 8px;
+    margin: 14px;
+    padding-bottom: 10px;
+}
+
+.selected{
+    background-color: rgb(60, 245, 91);
+}
+
+.rejected{
+    background-color: rgb(250, 92, 86);
+}
+
+.profile{
+    min-height: 130px;
+    min-width: 150px;
+    border-radius: 50%;
+    margin: 0 .5em;
+    padding: .5em;
+}
+
+.upperLeft{
+    display: flex;
+    align-items: stretch;
+}
+
+.details1, .details2, .details3{
+    padding-top: 14px;
+}
+
+#name{
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(68, 67, 67);
+}
+
+.school, .resume{
+    padding-top: 12px;
+    margin: 0 .5em;
+    padding: .5em;
+}
+
+.userTest{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tokenMail{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.details{
+    min-height: 150px;
+    margin: 0 .3em;
+    padding: .5em;
+}
+
+
+#resume, #college{
+    text-decoration: none;
+    color: rgb(42, 43, 43);
+    font-weight: normal;
+    font-size: 15px;
+    margin-top: 8px;
+    padding-left: 8px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.circle{
+    height: 130px;
+    width: 130px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}

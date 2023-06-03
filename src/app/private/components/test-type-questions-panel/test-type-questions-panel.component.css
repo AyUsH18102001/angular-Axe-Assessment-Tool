@@ -1,0 +1,27 @@
+.question{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.question:hover{
+    transform: scale(1.05);
+    color: rgb(13, 126, 255);
+}
+
+.question p{
+    padding-right: 6px;
+}
+
+.added{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: 0.2s all;
+    opacity: 0.3;
+}

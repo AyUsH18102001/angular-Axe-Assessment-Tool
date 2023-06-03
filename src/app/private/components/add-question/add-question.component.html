@@ -1,0 +1,112 @@
+<div class="addQuestionForm">
+
+    <div class="heading">
+        <div class="title">
+            <p class="addQues"> Add Question</p>
+            <p>Please fill all the question fields</p>
+        </div>
+
+        <div class="bulkFile">
+            <div class="bulk">
+                <p style="padding: 12px; color: blue;">Add Question in Bulk</p>
+                <button class="excelFile" (click)="clickExceFile()">CSV File</button>
+                <input [(ngModel)]="csv" (change)="getExcelFile($event)" type="file" name="excelFile" id="excelFile" style="display:none">
+                <div class="" (click)="downloadCSV()">
+                    <a href="https://localhost:7143/QuestionBulk/test.csv" download style="text-decoration: none;"> <p style="padding: 12px; color: blue; opacity: 0.7;">Test format <fa-icon [icon]="download"></fa-icon></p></a>
+                </div>
+            </div>
+            <div class="tooltip">CSV format
+                <span class="tooltiptext">
+                    <b style="padding-left: 10px;">Headers</b> <br>
+                    <hr>
+                    <div class="formatRules">
+                        Content : 'Foo' <br>
+                        TypeId : tf - True/False, mcq - MCQ, ms - Multiple Select<br>
+                        Option-1 : 'Answer-Score'<br>
+                        . <br>
+                        . <br>
+                        . <br>
+                        Option-n : 'Answer-Score'<br>
+                    </div>
+                </span>
+            </div>
+            <div class="row" *ngIf="excelFilePath != '' ">
+                <p id="bulkFilePath" class="col">{{excelFilePath}}</p>
+                <p class="upload col" (click)="uploadBulkQuestions()">Upload <fa-icon [icon]="upload"></fa-icon></p>
+                <fa-icon [icon]="close" style="cursor: pointer;" (click)="removeCSV()"></fa-icon>
+            </div>
+        </div>
+    </div>
+
+    <div class="addForm">
+        <form #questionForm="ngForm" (ngSubmit)="addQuestionData()">
+            <div class="form-control">
+                <label for="questionContent">Question Content</label>
+                <input type="text" name="questionContent" id="questionContent" [(ngModel)]="addQuestion.questionContent"
+                    placeholder="Question Content (Ex. What is a Transaction)">
+            </div>
+
+            <div class="form-control">
+                <div class="questionImage">
+                    <label for="questionImage" class="questionImageLabel">Question Image</label>
+                    <p class="questionImageP">This is not a required field</p>
+                </div>
+                <div class="imageButtonAndPath">
+                    <button type="button" class="fileButton" (click)="clickInputFile()">Add QuestionImage</button>
+                    <input (change)="getImageFile($event)" type="file" name="questionImage" id="questionImage"
+                        style="display:none">
+                    <p class="imagePath">{{imageFilePath}}</p>
+                    <div *ngIf="showImage" class="img">
+                        <a id="showImage" [href]="imageURL | safe" rel="noopener" target="_blank">Show Image &nbsp;</a>
+                        <fa-icon [icon]="close" style="padding-top: 8px; cursor: pointer;" (click)="removeImage()"></fa-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-control col">
+                    <label for="questionTypeId">Question Type</label>
+                    <div class="select">
+                        <select id="questionTypeId" name="questionTypeId" [(ngModel)]="addQuestion.questionTypeId"
+                            (click)="questionTypeSelected()">
+                            <option *ngFor="let type of questionTypes; let i = index" value="{{type.questionTypeId}}">{{type.type}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-control col">
+                    <label for="testTypeId">Test Type</label>
+                    <div class="select">
+                        <select id="testTypeId" name="testTypeId" [(ngModel)]="addQuestion.testTypeId">
+                            <option *ngFor="let test of testTypes;" value="{{test.testTypeId}}">{{test.test}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="form-control" *ngIf="showOptions">
+                <label>Options</label>
+                <p>Please check the radiobutton to slect an option as the asnwer</p>
+                <div *ngIf="showOptionInput">
+                    <div *ngFor="let option of options; let i=index" class="input">
+                        <div class="selectOption selectBlob" id="select-{{i}}" (click)="selectOptionAsAnswer(i)"></div>
+                        <input type="text" name="options-{{i}}" id="option-{{i}}" [(ngModel)]="addQuestionOptions[i]"
+                            placeholder="Opton No. {{i+1}}" class="selectOption inputOption">
+                    </div>
+                </div>
+                <div *ngIf="!showOptionInput" class="trueFalse">
+                    <div id="true" class=" tf-option" (click)="addTrueOrFalse(true)">
+                        <p class="tf">True</p>
+                    </div>
+                    <div id="false" class="tf-option" (click)="addTrueOrFalse(false)">
+                        <p class="tf">False</p>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" name="submit" id="submit" class="btn btn-block">Add Question</button>
+        </form>
+    </div>
+</div>
+<div id="snackbar">{{snackBarContent}}</div>

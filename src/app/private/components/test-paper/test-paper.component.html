@@ -1,0 +1,29 @@
+<div class="testPaper" id="testPaper">
+    <div class="paperTitle">
+        <input type="text" id="testTitle" class="inputTitle" placeholder="Enter Title" name="testName" [(ngModel)]="testName">
+        <h2>Test Questions</h2>
+    </div>
+
+    <div class="questions">
+        <div *ngFor="let question of questions; let i=index" class="question">
+            <p style="width: 75%; justify-content: start;"><b>Q{{i+1}}.</b> {{question.content}}</p>
+            <br>
+            <p style="width: 15%; justify-content: start; font-size: 13px; padding-top: 3px;">({{question.type}})</p>
+            <br>
+            <div class="delete" style="width: 10%; justify-content: end; color: red; cursor: pointer;" 
+                 (click)="removeQuestion(question.id,question.testId)">
+                <fa-icon [icon]="delete"></fa-icon>
+            </div>
+        </div>
+    </div>
+
+    <div class="addRules" (click)="addRules()" *ngIf="!addTest && !editTest">
+        Add Rules
+    </div>
+    <div class="addTest" (click)="createTest()" *ngIf="addTest && !editTest">
+        Create Test
+    </div>
+    <div class="addTest" (click)="updateTest()" *ngIf="editTest && !addTest">
+        Update Test
+    </div>
+</div>

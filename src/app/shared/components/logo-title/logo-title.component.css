@@ -1,0 +1,21 @@
+img:hover{
+    cursor: pointer;
+}
+
+.logo{
+    padding-left: 44px;
+    float: left;
+}
+p {
+    padding-left: 30px;
+    padding-top: 36px;
+    float: left;
+}
+  
+.logoName{
+    font-size: 25px;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding-right: 8px;
+    padding-left: 30px;
+}

@@ -1,0 +1,36 @@
+.option {
+    display: block;
+    width: 90%;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: 0.4s all;
+    font-size: large;
+    cursor: pointer;
+  }
+  
+.active {
+  background-color: #4fd487;
+  color: #fff;
+  display: block;
+  width: 90%;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  transition: 0.4s all;
+  border: 2px solid transparent;
+  font-size: large;
+  cursor: pointer;
+}
+.active:hover{
+  color: #fff;
+}
+
+
+.option:hover {
+  cursor: pointer;
+  border: 2px solid #29b162;
+  color: #29b162;
+}

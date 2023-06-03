@@ -1,0 +1,36 @@
+.toggle{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rules{
+    float: left;
+}
+
+.rulesList{
+    padding-top: 16px;
+    width: 58vw;
+    height: 50vh;
+    overflow: scroll;
+    padding-right: 12px;
+}
+
+.save{
+    background-color: #576CBC;
+    width: 20vw;
+    padding: 12px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    font: bolder;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.save p :hover{
+    font-weight: bolder;
+    cursor: pointer;
+}

@@ -1,0 +1,8 @@
+<div class="question-item">
+    <div class="content">
+        {{question.questionContent}}
+    </div>
+    <p class="type">{{question.questionTypeId}}</p>
+    <p class="edit" (click)="goEditPage()"><fa-icon [icon]="editIcon"></fa-icon> Edit</p>
+    <p class="delete" (click)="onDeleteQuestion(question.questionId)"><fa-icon [icon]="delete"></fa-icon></p>
+</div>

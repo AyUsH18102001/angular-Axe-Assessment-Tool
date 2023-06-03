@@ -1,0 +1,20 @@
+<nav class="navbar">
+    <app-logo-title [testName]='testName'></app-logo-title>
+    
+    <!-- Timer -->
+    <div>
+        <p id="timer">00:00</p>
+    </div>
+
+
+    <div class="right">
+        <!-- End test button -->
+        <button class="Btn end" *ngIf="!submitTest" (click)='onEndTest()'>End Test</button>
+    </div>
+
+
+    <div class="right">
+        <!-- User email -->
+        <p id="email">{{userEmail}}</p>
+    </div>
+</nav>

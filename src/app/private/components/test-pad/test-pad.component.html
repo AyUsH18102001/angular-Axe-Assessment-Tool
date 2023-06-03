@@ -1,0 +1,29 @@
+<div class="testPad" *ngIf="test != null">
+    <img src="../../../../assets/images/exam-pad.png" width="260" height="340">
+    <div class="content">
+        <div id="testName">{{test.testName}}</div>
+        <br>
+        <div class="creator">
+            <p>Created by : {{test.testCreator}}</p>
+            <p>Date : {{test.createdDate}}</p>
+        </div>
+        <br>
+        <br>
+        <div class="questions">
+            <p>Aptitude Questions : {{test.mcQ_Count}}</p>
+            <p>SQL Questions : {{test.sqL_Count}}</p>
+        </div>
+    </div>
+
+    <div class="actions">
+        <div class="row">
+            <div class="action edit" (click)="editTest()">
+                <p><fa-icon [icon]="edit"></fa-icon> Edit Test</p>
+            </div>
+     
+            <div class="action delete" (click)="deleteTestHandler(test.testId)">
+                <p><fa-icon [icon]="delete"></fa-icon> Delete Test</p>
+            </div>
+        </div>
+    </div>
+</div>

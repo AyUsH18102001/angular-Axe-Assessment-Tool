@@ -1,0 +1,15 @@
+<div style="margin-bottom: 10%;"></div>
+<div class="container">
+    <h1 class="header" >Test Code</h1>
+    <p class="subHeader">Please check yor email we have send you a token for login</p>
+    <form (ngSubmit)="tokenLogin()">
+        <div class="form-control">
+            <label for="email">&nbsp;&nbsp; <fa-icon [icon]="tokenIcon"></fa-icon> </label>
+            <input [ngStyle]="{'border-color':tokenBorderColor}" type="text" name="token" [(ngModel)]="user.token" id="token" 
+            (keyup)="tokenInputHandler()" placeholder="Enter Code">
+        </div>
+        &nbsp;
+        <button [ngStyle]="{'opacity':tokenPass ? 1 : 0.3}" type="submit" name="submit" id="submit" class="btn btn-block">Proceed</button>
+    </form>
+    <div id="snackbar">{{snackBarContent}}</div>
+</div>

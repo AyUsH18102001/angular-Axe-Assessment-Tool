@@ -1,0 +1,73 @@
+<div style="margin-bottom: 5%;"></div>
+<div class="container">
+    <h1 class="header">Register</h1>
+    <form (ngSubmit)="register()">
+
+        <div class="row">
+            <div class="form-control fname col">
+                <label for="text">First Name&nbsp;&nbsp; <fa-icon [icon]="username"></fa-icon> </label>
+                <input [ngStyle]="{'border-color':firstNameBorderColor}" type="text" name="fname"
+                    [(ngModel)]="user.firstName" id="fname" (keyup)="fnameInputHandler()" placeholder="Enter FirstName">
+            </div>
+
+            <div class="form-control lname col">
+                <label for="lname">Last Name &nbsp;&nbsp; <fa-icon [icon]="username"></fa-icon> </label>
+                <input [ngStyle]="{'border-color':lastNameBorderColor}" type="text" name="lname"
+                    [(ngModel)]="user.lastName" id="lname" (keyup)="lnameInputHandler()" placeholder="Enter Lastname">
+            </div>
+
+            <div class="form-control col">
+                <label for="email">Email &nbsp;&nbsp; <fa-icon [icon]="emailIcon"></fa-icon> </label>
+                <input [ngStyle]="{'border-color':emailBorderColor}" type="email" name="email" [(ngModel)]="user.email"
+                    id="email" (keyup)="emailInputHandler()" placeholder="Enter Email">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-control phone col">
+                <label for="phone">Phone &nbsp;&nbsp; <fa-icon [icon]="phoneIcon"></fa-icon> </label>
+                <input [ngStyle]="{'border-color':phoneBorderColor}" type="tel" name="phone" [(ngModel)]="user.phone"
+                    id="phone" (keyup)="phoneInputHandler()" placeholder="Enter Phone Number">
+            </div>
+
+            <div class="form-control college col">
+                <label for="password">College &nbsp;&nbsp; <fa-icon [icon]="school"></fa-icon> </label>
+                <input [ngStyle]="{'border-color':collegeBorderColor}" type="text" name="college"
+                    [(ngModel)]="user.college" id="password" placeholder="Colege Name" (keyup)="collegeInputHandler()">
+            </div>
+
+        </div>
+
+        <div class="files">
+            <div class="form-control pad userImage">
+                <label for="confirmPassword">Candidate Profile Photo&nbsp;&nbsp; <fa-icon [icon]="image"></fa-icon></label>
+                <div class="imageButtonAndPath">
+                    <button type="button" class="fileButton" (click)="clickInputFile('userImage')">Add Profile</button>
+                    <input (change)="getImageFile($event,true)" type="file" name="userImage" id="userImage"
+                        style="display:none">
+                    <p class="imagePath">{{imageFilePath}}</p>
+                    <div *ngIf="showImage" class="img">
+                        <a id="showImage" [href]="imageURL | safe" rel="noopener" target="_blank">Show Image</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-control pad userResume">
+                <label for="confirmPassword">Candidate Resume &nbsp;&nbsp; <fa-icon [icon]="resume"></fa-icon></label>
+                <div class="resumeButtonAndPath">
+                    <button type="button" class="fileButton profile" (click)="clickInputFile('userResume')">Add Resume</button>
+                    <input (change)="getImageFile($event,false)" type="file" name="userResume" id="userResume"
+                        style="display:none">
+                    <p class="imagePath">{{pdfFilePath}}</p>
+                    <div *ngIf="showPdf" class="img">
+                        <a id="showPdf" [href]="pdfURL | safe" rel="noopener" target="_blank">Show Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input [ngStyle]="{'opacity':registerButtonVisible ? 1 : 0.3}" type="submit" name="submit" id="submit"
+            value="Register" class="btn btn-block">
+    </form>
+</div>
+<div id="snackbar">{{snackBarContent}}</div>

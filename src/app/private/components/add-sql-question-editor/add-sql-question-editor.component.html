@@ -1,0 +1,50 @@
+<div class="addSQL">
+    <div class="row">
+        <div class="heading">
+            <div class="title">
+                <p>SQL Question Editor</p>
+            </div>
+        </div>
+
+        <div class="showDbInfo">
+            <p (click)="showModal()">Tables Schemas</p>
+        </div>
+    </div>
+
+
+    <input type="text" name="questionTitle" id="questionTitle" [(ngModel)]="addSqlQuestion.questionTitle"
+        placeholder="Enter the question Title. (Ex. Distance Calculation)">
+    <br>
+    <br>
+
+    <div id="myModal-tables" class="modal-tables">
+        <div class="modal-content-tables">
+            <span class="close-tables" (click)="removeModal()">&times;</span>
+            <app-table-schemas [tableSchemas]="tableSchemas"></app-table-schemas>
+        </div>
+    </div>
+
+    <div class="tiny" id="editor">
+        <editor [(ngModel)]='addSqlQuestion.questionContent'
+            [init]="{ plugins: 'lists link image table code wordcount' , height : '46vh'}"></editor>
+    </div>
+
+    <div class="textArea">
+        <textarea name="query" id="query" cols="100%" [(ngModel)]="addSqlQuestion.sqL_Answer.query" rows="5"
+            placeholder="Enter the query for the above problem statement"></textarea>
+    </div>
+
+    <div class="addQuestion"  *ngIf="!editMode">
+        <div class="btn" (click)='addQuestion()'>
+            Add Question
+        </div>
+    </div>
+
+    <div class="addQuestion" *ngIf="editMode">
+        <div class="btn" (click)='updateQuestion()'>
+            Update Question
+        </div>
+    </div>
+
+</div>
+<div id="snackbar">{{snackBarContent}}</div>

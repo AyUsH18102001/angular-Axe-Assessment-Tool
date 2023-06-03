@@ -1,0 +1,52 @@
+<P style="text-align: right; cursor: pointer;" (click)="exportPDF()">Export PDF <fa-icon [icon]="pdf"></fa-icon></P>
+<div class="pdfHTML" id="pdfHTML" *ngIf="userData != null"> 
+    <div class="title">
+        <p> Candidate Report</p>
+    </div>
+    <br>
+    <div class="upperLeft">
+        <div class="profile">
+            <span class="circle">
+                <img *ngIf="hasProfile" id="profile" src="{{profileImage}}">
+                <img *ngIf="!hasProfile" src="../../../../assets/images/defaultProfile.png">
+            </span>
+        </div>
+        
+        <div class="details">
+            <div class="details1">
+                <p id="name">{{userData.firstName}} {{userData.lastName}}</p>
+            </div>
+        
+            <div class="details2">
+                <p id="email"><fa-icon [icon]="email" id="email"></fa-icon> &nbsp; {{userData.email}}</p>
+            </div>
+        
+            <div class="details3">
+                <p id="phone"> <fa-icon [icon]="phone" id="phone"></fa-icon> &nbsp; {{userData.phone}}</p>
+            </div>
+
+            <div class="school">
+                <p id="college"> <fa-icon [icon]="school" id="college"></fa-icon> &nbsp; {{userData.college}}</p>
+            </div>
+            
+            <div class="test">
+                <p id="testName"> Test Attempted :  <b style="color: blue;">{{testName}} Test</b></p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="score">
+            <h3>Test Details</h3>
+
+            <h4>Score : {{userData.userTest.score}}</h4>
+            <h4>Violation : {{userData.violation}}</h4>
+        </div>
+    </div>
+
+    <div class="testQuestions">
+        <h4>Test questions attempted by Candidate</h4>
+        <br>
+        <app-test-summary [questionsAttempted]="questionsAttempted" [sqlQuestions]="sqlQuestions"></app-test-summary>
+    </div>
+</div>

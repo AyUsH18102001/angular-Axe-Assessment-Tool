@@ -1,0 +1,126 @@
+<app-test-navbar [userEmail]='userEmail' [testName]="testName" (endTest)='showModal()' ></app-test-navbar>
+
+<div class="">
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" (click)="removeModal()">&times;</span>
+            <h3 style="color: black;">Are you sure you want to quit the test</h3>
+            <br>
+            <button class="red" (click)="endTest()" style="display:inline-block;">Yes</button>
+            <button class="green" (click)="removeModal()" style="display:inline-block; width: 150px;">Continue
+                Test</button>
+        </div>
+    </div>
+
+    <div id="submitModal" class="modal">
+        <div class="modal-content">
+            <span class="close" (click)="closeSubmitModal()">&times;</span>
+            <h3 style="color: black;">Are you sure you want to submit the test</h3>
+            <br>
+            <button class="green" (click)="submitAptitudeTest()" style="display:inline-block;" *ngIf="noSql">Yes</button>
+            <button class="green" (click)="submitTest('thankyou')" style="display:inline-block;" *ngIf="!noSql && !noAptitude">Yes</button>
+            <button class="green" (click)="submitTest('thankyou')" 
+            style="display:inline-block;" *ngIf="!noSql && noAptitude">Yes</button>
+            <button class="red" (click)="closeSubmitModal()" style="display:inline-block; width: 150px;">Continue
+                Test</button>
+        </div>
+    </div>
+
+    <div id="violationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" (click)="closeModal()">&times;</span>
+            <h3 style="color: black;">{{violationMessage}}</h3>
+            <br>
+            <button class="green" (click)="closeModal()" style="display:inline-block; width: 150px;">Continue Test</button>
+        </div>
+    </div>
+
+    <div class="test">
+        <div class="navigation" id="navigation" *ngIf="questionsDummy.length>0">
+            <div class="leftDiv" (click)='prevLook()' [ngClass]="{'disableNavigation':currentQuestion<=0}">
+                <fa-icon [icon]="leftArrow" size='3x'></fa-icon>
+            </div>
+            <div class="questionsStatus">
+                <div *ngFor="let question of questionsDummy; let i = index" (click)="goToQuestion(i)"
+                    class="questionBlob questionBlob-{{i}}}" id="blob-{{i}}}">
+                    <p>&nbsp;{{i+1}}&nbsp;</p>
+                </div>
+    
+            </div>
+            <div class="rightDiv" (click)='nextLook(true)'
+                [ngClass]="{'disableNavigation':currentQuestion >= questionsDummy.length-1}">
+                <div class="arrow">
+                    <fa-icon [icon]="rightArrow" size='3x'></fa-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!showSqlFrame" class="test" (selectstart)="false">
+        <div class="questions">
+            <app-question *ngIf="questionCount>0" [question]="questions[currentQuestion]"
+                [questionNumber]="currentQuestion+1"></app-question>
+        </div>
+    
+        <button *ngIf="questionCount>0 && currentQuestion<questionCount-1" class="btn-submit" id="submit"
+            (click)="registerAnswer()">Save & Next</button>
+        <button *ngIf="questionCount-1 == currentQuestion && !noSql && !review" class="btn-submit" id="submit"
+            (click)="registerAnswer()">SQL Section</button>
+        <button *ngIf="questionCount-1 == currentQuestion && noSql && !review" class="btn-submit" id="submit"
+            (click)="submitShow()">Submit Test</button>
+        <button *ngIf="review && noSql && questionCount-1 == currentQuestion" class="btn-submit" id="submit"
+            (click)="reviewTest()">Review Test</button>
+    
+    </div>
+    
+    <div *ngIf="showSqlFrame" class="sqlQuestion">
+        <div class="leftSide">
+            <div class="problemStatement" id="problemStatement" [innerHTML]="sqlProblem.questionContent">
+            </div>
+        </div>
+    
+        <div class="editor_console">
+            <div class="app-ace-editor" #editor></div>
+    
+            <div class="console">
+                <div class="run_submitButtons">
+                    <button id="run" (click)="runQuery()">Run Query</button>
+                    <button id="submit" *ngIf="questionsDummy.length-1 > currentQuestion" 
+                     (click)="registerQuery()">Save & Next</button>
+
+                    <button id="submit" *ngIf="questionsDummy.length-1 == currentQuestion && !reviewWithSql && !reviewAptitude" 
+                    (click)="submitShow()">Submit Test</button>
+
+                    <button id="submit" *ngIf="questionsDummy.length-1 == currentQuestion && (reviewWithSql || reviewAptitude)" 
+                    (click)="reviewTest()">Review Test</button>
+                </div>
+    
+                <div class="outputSet">
+                    <div class="passed" *ngIf="!errorOutput && responseFetched && showSqlResultMessages">
+                        <h2 style="color: #1BA94C;">Congratulations!</h2>
+                        <p>You have passed the sample test cases. Click the submit button to run your code against all the
+                            test cases.</p>
+                    </div>
+    
+                    <div class="failed" *ngIf="errorOutput && showSqlResultMessages">
+                        <h2 style="color: #D11534;">Wrong Answer :(</h2>
+                    </div>
+    
+                    <div class="compilerMsg" *ngIf="errorOutput && showSqlResultMessages">
+                        <h4>Compiler Message</h4>
+                        <div class="messageContainer">
+                            <p style="padding: 12px;">Wrong answer.</p>
+                        </div>
+                    </div>
+    
+                    <div class="output">
+                        <h4 style="opacity: 0.6; font-weight: lighter;">Your Output</h4>
+                        <div class="outputContainer" id="outputContainer" [innerHTML]='outputSet'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="snackbar">{{snackBarContent}}</div>

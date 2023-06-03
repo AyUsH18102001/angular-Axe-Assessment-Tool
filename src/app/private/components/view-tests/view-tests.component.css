@@ -1,0 +1,15 @@
+.title{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.testPads{
+    float: left;
+    height: 660px;
+    width: 55vw;
+    overflow: scroll;
+    padding-top: 22px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}

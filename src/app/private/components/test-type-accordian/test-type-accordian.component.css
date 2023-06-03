@@ -1,0 +1,55 @@
+.title{
+    text-align: center;
+    color: rgb(48, 47, 47);
+}
+
+.testTitle{
+    background-color: rgba(108, 238, 85, 0.993);
+}
+
+.accordion {
+    background-color: #19376D;
+    opacity: 0.9;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 17px;
+    transition: 0.4s;
+    margin-bottom: 2px;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #576CBC; 
+    opacity: 0.9;
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .accordion:after {
+    content: '\02C4'; /* Unicode character for "plus" sign (+) */
+    font-size: 16px;
+    font-weight: bolder;
+    color:whitesmoke;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2304"; /* Unicode character for "minus" sign (-) */
+    font-size: 16px;
+    font-weight: bolder;
+    color: whitesmoke;
+    float: right;
+    margin-left: 5px;
+  }
+

@@ -1,0 +1,33 @@
+<div style="margin-bottom: 10%;"></div>
+<div class="container">
+    <h1 class="header">Login</h1>
+    <form (ngSubmit)="login()">
+        <div class="form-control">
+            <label for="email">Email &nbsp;&nbsp; <fa-icon [icon]="emailIcon"></fa-icon> </label>
+            <div class="row">
+                <input [ngStyle]="{'border-color':emailBorderColor}" type="text" name="email" id="email"
+                [(ngModel)]="user.email" placeholder="Enter Email" (keyup)="emailInputHandler()">
+                <fa-icon class="inp-icon" [icon]="clear" (click)="clearEmail()"></fa-icon>
+            </div>
+        </div>
+
+        <div class="form-control">
+            <label for="password">Password &nbsp;&nbsp; <fa-icon [icon]="passwordIcon"></fa-icon> </label>
+            <div class="row">
+                <input [ngStyle]="{'border-color':passwordBorderColor}"[type]="showPassword ? 'text' : 'password'" 
+                    name="password" [(ngModel)]="user.password" id="password" placeholder="New Password"
+                    (keyup)="passwordInputHandler()">
+                <fa-icon class="inp-icon" [icon]="passwordShowState" (click)="togglePasswordShow()"></fa-icon>
+            </div>
+            <p id="forgotPassword" (click)="goToForgotPassword()">Forgot Password ?</p>
+        </div>
+
+        <input type="submit" [ngStyle]="{'opacity':passwordPass && emailPass ? 1 : 0.3}" name="submit" id="submit"
+            value="Login" class="btn btn-block" (click)="login()">
+
+        <p id="new-profile" (click)="goToRegister()">Create New Profile</p>
+
+    </form>
+</div>
+<input type="button" name="testCode" id="testCode" value="Give Test" class="btn btn-block" (click)="goTokenLogin()">
+<div id="snackbar">{{snackBarContent}}</div>

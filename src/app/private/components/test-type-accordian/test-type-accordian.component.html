@@ -1,0 +1,14 @@
+<div id="testTypeAccordian" class="testTypeAccordian" *ngIf="testTypeQuestions != [] ">
+
+    <div id="dummyAdd" (click)="sendTestData()"></div>
+
+    <div *ngFor="let type of testTypeQuestions; let i=index;">
+        <button class="accordion" (click)="togglePanelHandler(i)">{{type.test}}</button>
+        <div class="panel">
+            <app-test-type-questions-panel [questions]="type.questions" 
+                                           [testypeId]="type.testypeId" 
+                                           (addToTest)="addToTest($event)"
+                                           ></app-test-type-questions-panel>
+        </div>
+    </div>
+</div>

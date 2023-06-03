@@ -1,0 +1,17 @@
+.questionBlock{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.correct{
+    color: rgb(14, 185, 14);
+}
+
+.wrong{
+    color: red;
+}
+
+.option{
+    padding-top: 3px;
+    padding-bottom: 3px;
+}

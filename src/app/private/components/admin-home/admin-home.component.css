@@ -1,0 +1,22 @@
+.box {
+    width: 80%;
+    margin: 45px auto;
+    overflow: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    height: 85vh;
+    /* border: 2px solid rgb(117, 241, 144); */
+}
+
+.left{
+    float: left;
+}
+
+.divider{
+    float: left;
+    border-left: 4px solid #022F3B;
+    height: 80vh;
+    width: 20px;
+}

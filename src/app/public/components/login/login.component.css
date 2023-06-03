@@ -1,0 +1,36 @@
+.header{
+    color: #022F3B;
+}
+
+.row{
+    display: flex;
+    justify-content: stretch;
+}
+
+#forgotPassword{
+    color: blue;
+    text-align: right;
+    cursor: pointer;
+}
+
+.inp-icon{
+    padding-top: 14px;
+    cursor: pointer;
+}
+
+#testCode{
+   width: 25%;
+   margin: auto;
+   transition: 0.6s all;
+}
+
+#testCode :hover{
+    font-weight: bold;
+}
+
+#new-profile{
+    color: blue;
+    text-align: center;
+    padding-top: 15px;
+    cursor: pointer;
+}

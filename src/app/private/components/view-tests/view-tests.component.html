@@ -1,0 +1,22 @@
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="removeModal()">&times;</span>
+        <h3 style="color: black;">Are you sure you want to delete the test</h3>
+        <br>
+        <button class="red" (click)="deleteQuestion()" style="display:inline-block;">Yes</button>
+        <button class="green" (click)="removeModal()" style="display:inline-block; width: 150px;">Cancel</button>
+    </div>
+</div>
+<div class="viewTests">
+    <div class="heading">
+        <div class="title">
+            <p>Tests</p>
+        </div>
+    </div>
+    <p>All the test details are displayed below</p>
+
+    <div class="testPads" *ngIf="tests.length != 0">
+        <app-test-pad *ngFor="let test of tests" [test]="test" (deleteTest)="showModal($event)"></app-test-pad>
+    </div>
+</div>
+<div id="snackbar">{{snackBarContent}}</div>

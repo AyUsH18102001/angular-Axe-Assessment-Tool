@@ -1,0 +1,253 @@
+.addForm{
+    float: left;
+    height: 600px;
+    width: 55vw;
+    overflow: scroll;
+    padding-top: 22px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.heading{
+    display: flex;
+    justify-content: stretch;
+}
+
+.row{
+    display: flex;
+    justify-content: stretch;
+    width: 20vw;
+}
+.col{
+    /* width: 50%; */
+    margin-top: 1%;
+    margin-bottom: -10%;
+    cursor: pointer;    
+}
+
+.upload{
+    margin-top: 1%;
+    cursor: pointer;
+}
+
+.download{
+    margin-left: 4vw;
+}
+
+.title{
+    width: 60%;
+    display: inline-block;
+}
+
+.addQues{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.bulk{
+    display: flex;
+    justify-content: stretch;
+}
+
+#bulkFilePath{
+    padding-left: 2.8%;
+    width: 50%;
+}
+
+.excelFile{
+    border: none;
+    margin: inherit;
+    width: 130px;
+    text-align: center;
+    color: whitesmoke;
+    background-color: royalblue;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Tooltip */
+.tooltip {
+    margin-top: 1%;
+    margin-left: 2.5%;
+    margin-bottom: 1%;
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 25vw;
+    background-color: rgb(66, 65, 65);
+    color: #fff;
+    border-radius: 6px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .tooltest b{
+      padding-left: 10px;
+      padding-top: 4px;
+  }
+
+  .formatRules{
+    padding-left: 10px;
+    padding-top: 4px;
+  }
+
+  .tooltiptext{
+      margin-right: 40vw;
+      z-index: 10;
+      margin-left: 10px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+.custom-select {
+    position: relative;
+    width:200px;
+}
+
+select{
+    width: 200px;
+    margin-top: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    border: none;
+    background-color: rgb(240, 238, 238);
+    border-radius: 10px;
+}
+
+select:hover{
+    cursor: pointer;
+}
+
+label{
+    font-weight: bold;
+}
+
+option{
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 16px;
+    border: none;
+    color: gray;
+    font: inherit;
+}
+
+#inputOption{
+    width: 20vw;
+    height: 100px;
+    margin: 20px;
+}
+
+button{
+    width: 20vw;
+    margin: auto;
+    margin-top: 2vw;
+}
+
+.selected{
+    background-color: rgb(184, 252, 116);
+}
+
+.selectOption{
+    display: inline-block;
+}
+.input{
+    display: inline-block;
+    padding-right: 20px;
+    padding-top: 15px;
+    width: 20vw;
+}
+.selectBlob{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(43, 42, 42);
+}
+.selectBlob:hover{
+    background-color: rgb(184, 252, 116);
+}
+
+.tf-option{
+    display: inline-block;
+    margin-right: 15px;
+    width: 20vw;
+    height: 2vw;
+    border-radius: 5px;
+    background-color: rgb(187, 186, 186);
+    border-bottom: 2px solid rgb(66, 66, 66);
+}
+
+.tf{
+    padding-top: 6px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.questionImageLabel{
+    display: inline-block;
+}
+
+.fileButton{
+    display: inline-block;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+    padding: 8px;
+    width:150px;
+    height:40px;
+    border: none;
+    margin-top: 14px;
+}
+
+.imagePath{
+    display: inline-block;
+    padding-left: 12px;
+    font-size: 14px;
+}
+
+.img{
+    display: flex;
+    justify-content: stretch;
+}
+
+.questionImageP{
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 14px;
+    margin: 0px;
+}
+
+#showImage{
+    text-decoration: none;
+    color: teal;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.tf:hover{
+    cursor: pointer;
+}
+
+.trueFalse{
+    padding-top: 14px;
+}
+
+.row{
+    display: flex;
+    justify-content: stretch;
+    width: 70%;
+    height: 8vh;
+}
+
+.col{
+    width: 50%;
+}

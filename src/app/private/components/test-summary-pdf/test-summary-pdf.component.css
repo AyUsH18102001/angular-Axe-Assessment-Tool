@@ -1,0 +1,128 @@
+.candidate{
+    float: left;
+    position: relative;
+    width: 46%;
+    height: 300px;
+    background-color: #F6F6F6;
+    border-radius: 8px;
+    margin: 14px;
+    padding-bottom: 10px;
+}
+
+.pdfHTML{
+    width: 58vw;
+    height: 100%;
+    float: left;
+}
+
+.selected{
+    background-color: rgb(60, 245, 91);
+}
+
+.rejected{
+    background-color: rgb(250, 92, 86);
+}
+
+.profile{
+    min-height: 160px;
+    min-width: 190px;
+    border-radius: 50%;
+    margin: 0 .5em;
+    padding: .5em;
+}
+
+.upperLeft{
+    display: flex;
+    align-items: stretch;
+}
+
+.details1, .details2, .details3{
+    padding-top: 14px;
+}
+
+#name{
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(68, 67, 67);
+}
+
+.school, .resume, .test{
+    padding-top: 12px;
+}
+
+.userTest{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tokenMail{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.details{
+    min-height: 150px;
+    margin: 0 .3em;
+    padding: .5em;
+}
+
+.divider{
+    width: 5%;
+    margin-left: 5.5%;
+    float: left;
+    border-left: 2.8px dashed rgb(11, 44, 87);
+    height: inherit;
+}
+.score{
+    padding-top: 12px;
+}
+
+.testQuestions{
+    float: left;
+    margin-left: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 45vw;
+    height: 100%;
+    padding: 20px;
+}
+.html2canvas-container { width: 3000px !important; height: 3000px !important; }
+.title p{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#resume, #college , #testName{
+    text-decoration: none;
+    color: rgb(42, 43, 43);
+    font-weight: normal;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.circle{
+    height: 160px;
+    width: 160px;
+    background-color: #F6F6F6;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+img{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    justify-content: center;
+}
