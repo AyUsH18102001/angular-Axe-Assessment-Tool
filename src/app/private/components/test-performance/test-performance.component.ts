@@ -47,7 +47,8 @@ export class TestPerformanceComponent implements OnInit {
     // get the user by id
     this.authService.getUserById(this.id).subscribe((res) => {
       this.userData = res;
-
+      console.log(this.userData.questionAttempted);
+      
       if (this.userData.selectionStatus == 1) {
         this.selectionStatus = true;
       }

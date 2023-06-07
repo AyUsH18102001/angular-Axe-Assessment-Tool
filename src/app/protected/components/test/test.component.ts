@@ -98,14 +98,14 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
   noSql: boolean = false;
   review: boolean = false;
 
-  reviewAptitude : boolean = false;
+  reviewAptitude: boolean = false;
   reviewWithSql: boolean = false;
 
   testName: string = '';
   questionsDummy: number[] = [];
-  outputSet : string = '';
+  outputSet: string = '';
 
-  terminateCandidate : boolean = false;
+  terminateCandidate: boolean = false;
   showSqlResultMessages: boolean = false;
 
   ngOnInit(): void {
@@ -341,8 +341,8 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
         const query = this.setTheSqlQuery();
         setTimeout(() => {
           this.setCodeEditor(query);
+          document.getElementById("outputContainer")!.innerHTML = '';
         }, 200);
-        document.getElementById("outputContainer")!.innerHTML = '';
         sessionStorage.setItem('currentQuestion', this.currentQuestion.toString());
         if (!this.noAptitude) {
           this.setQuestionBlobs(false);
@@ -436,7 +436,7 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     const violation = sessionStorage.getItem('violation');
-    if (object.selectedOption.length == 0 && Number(violation)>3 && this.terminateCandidate) {
+    if (object.selectedOption.length == 0 && Number(violation) > 3 && this.terminateCandidate) {
       return;
     }
 
@@ -500,7 +500,7 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
               blobs[element["questionNo"]].classList.add("questionAttempted");
             }
           }
-        }); 
+        });
       }
     }
     else {
@@ -596,7 +596,7 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
       query: this.userQuery.toString(),
       result: !this.errorOutput
     }
-    const violation = sessionStorage.getItem('violation'); 
+    const violation = sessionStorage.getItem('violation');
     if (!this.userQuery.toString().includes('select') && Number(violation) && this.terminateCandidate) {
       return;
     }
@@ -632,7 +632,7 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
     sessionStorage.setItem('sqlAttempted', JSON.stringify(sessionData));
     this.setTheSqlQuestionBlob(query.query, this.currentQuestion);
     this.nextLook(false);
-    
+
     // set the ouput set to empty
     document.getElementById("outputContainer")!.innerHTML = ``;
     return;
@@ -645,7 +645,7 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
         blobs[id].classList.remove("questionAttempted");
         blobs[id].classList.add("questionSkipped");
       }
-      else{
+      else {
         blobs[id].classList.add("questionSkipped");
       }
     }
@@ -654,7 +654,7 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
         blobs[id].classList.remove("questionSkipped");
         blobs[id].classList.add("questionAttempted");
       }
-      else{
+      else {
         blobs[id].classList.add("questionAttempted");
       }
     }
@@ -662,20 +662,18 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // submitTest
   submitTest(path: string) {
-    this.closeSubmitModal();
     // submit the aptitude test
     this.submitAptitudeTest();
 
-    setTimeout(() => {
-      const aptitude = Number(sessionStorage.getItem('aptitudeUpdated'));
-      const sql = Number(sessionStorage.getItem('sqlUpdated'));
-      if (aptitude == 1 && sql == 1) {
-        this.router.navigate([`/axe_assessment/${path}`]);
-      }
-    }, 1000);
+    const aptitude = Number(sessionStorage.getItem('aptitudeUpdated'));
+    const sql = Number(sessionStorage.getItem('sqlUpdated'));
+    this.router.navigate([`/axe_assessment/${path}`]);
+    // if (aptitude == 1 && sql == 1) {
+    //   this.router.navigate([`/axe_assessment/${path}`]);
+    // }
   }
 
-  // submit aptitude test
+  // submit aptitude testsubmitSql
   submitAptitudeTest() {
     this.closeSubmitModal();
     if (this.noSql) {
@@ -707,7 +705,6 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // submit sql test
   submitSqlTest(path: string) {
-    this.closeSubmitModal();
     this.registerQuery();
     const sql = JSON.parse(sessionStorage.getItem('sqlAttempted')!);
     if (sql.length == 0) {
@@ -727,7 +724,7 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.testService.submitSqlQuery(data).subscribe((res) => {
       if (res.message == "success") {
-        sessionStorage.setItem('sqlUpdated', '1');        
+        sessionStorage.setItem('sqlUpdated', '1');
         if (this.noAptitude) {
           this.router.navigate([`/axe_assessment/${path}`]);
         }
@@ -822,7 +819,7 @@ export class TestComponent implements OnInit, AfterViewInit, OnDestroy {
   closeModal() {
     // show the questions navigation
     document.getElementById('navigation')!.style.display = 'flex';
-    
+
     document.getElementById('violationModal')!.style.display = 'none';
   }
 
